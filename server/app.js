@@ -50,6 +50,33 @@ app.get('/api/repos/:repositoryId/commits/:commitHash', (req, res) => {
   });
 });
 
+app.post('/api/repos/:repositoryId/commits/:commitHash', (req, res) => {
+  const { limit, offset = 0 } = req.body;
+  const { repositoryId, commitHash } = req.params;
+  const gitLogCommand = `git log --pretty=format:"%H${dash}%cd${dash}%s" ${commitHash}`;
+
+  exec(`cd ${pathRepo}/${repositoryId} && ${gitLogCommand}`, (err, out = []) => {
+    if (err) {
+      res.status(404).send({
+        result: err,
+      });
+    } else {
+      const commits = out.split('\n').map((item) => {
+        const [hash, time, message] = item.split(dash);
+
+        return { hash, time, message };
+      });
+
+      const commitsLength = commits.length;
+
+      res.status(200).send({
+        result: commits.splice(offset, limit || commitsLength),
+        count: commitsLength,
+      });
+    }
+  });
+});
+
 app.get('/api/repos/:repositoryId/commits/:commitHash/diff', (req, res) => {
   const { repositoryId, commitHash } = req.params;
   const gitDiffCommand = `cd ${pathRepo}/${repositoryId} && git diff ${commitHash}`;
