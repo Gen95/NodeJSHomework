@@ -1,0 +1,32 @@
+{
+  "name": "nodejshomework",
+  "version": "1.0.0",
+  "description": "First ShRI Homework (node.js)",
+  "main": "app.js",
+  "scripts": {
+    "start:server": "npx nodemon ./server/app.js --watch server",
+    "lint": "npx eslint server/**/*.js",
+    "lint:fix": "npx eslint server/**/*.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gen95/NodeJSHomework.git"
+  },
+  "author": "Evgeny Trushkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gen95/NodeJSHomework/issues"
+  },
+  "homepage": "https://github.com/Gen95/NodeJSHomework#readme",
+  "dependencies": {
+    "eslint-config-airbnb": "^18.0.1",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.2",
+    "yargs": "^14.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
