@@ -1,0 +1,12 @@
+{% set block = "tabs" %}
+
+
+<div class="{{ block }}{% if mods %} {{block}}__{{mods}}{% endif %}">
+{% if content %}
+       {{content}}
+{% else %}
+{% for tab in tabs %}
+        <div class="tabs__item{% if tab.active %} tabs__item_active{% endif %}">{{tab.text}}</div>
+    {% endfor %}
+{% endif %}
+</div>

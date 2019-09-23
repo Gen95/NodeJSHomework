@@ -4,9 +4,15 @@
   "description": "First ShRI Homework (node.js)",
   "main": "app.js",
   "scripts": {
-    "start:server": "npx nodemon ./server/app.js --watch server",
-    "lint": "npx eslint server/**/*.js",
-    "lint:fix": "npx eslint server/**/*.js --fix"
+    "start": "npm-run-all --parallel start:client \"start:server -- {1}\" --",
+    "start:client": "npx gulp",
+    "start:server": "npx nodemon ./src/server/app.js --watch server",
+    "lint:js": "npx eslint src/**/*.js",
+    "lint:scss": "npx stylelint src/**/*.scss --config=.stylelintrc",
+    "lint": "npm-run-all lint:js lint:scss",
+    "lint:js:fix": "npx eslint src/**/*.js --fix",
+    "lint:scss:fix": "npx stylelint src/**/*.scss --config=.stylelintrc --fix",
+    "lint:fix": "npm-run-all lint:js:fix lint:scss:fix"
   },
   "repository": {
     "type": "git",
@@ -19,14 +25,35 @@
   },
   "homepage": "https://github.com/Gen95/NodeJSHomework#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "eslint-config-airbnb": "^18.0.1",
     "express": "^4.17.1",
+    "highlight.js": "^9.15.10",
     "nodemon": "^1.19.2",
     "yargs": "^14.0.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.5",
+    "csscomb": "^4.3.0",
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2"
+    "eslint-plugin-import": "^2.18.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-twig": "^1.2.0",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-watch": "^5.0.1",
+    "npm-run-all": "^4.1.5",
+    "stylelint": "^11.0.0",
+    "stylelint-config-sass-guidelines": "^6.1.0",
+    "webpack-stream": "^5.2.1"
   }
 }

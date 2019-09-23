@@ -1,0 +1,22 @@
+{% set block = "table" %}
+
+
+<div class="{{ block }}{% if mods %} {{block}}__{{mods}}{% endif %}">
+{% if content %}
+       {{content}}
+{% else %}
+<div class="{{ block }}__row {{ block }}__head">
+  <div class="{{ block }}__cell">Name</div>
+  <div class="{{ block }}__cell">Commit hash</div>
+</div>
+{% for i in 0..20 %}
+<div class="{{ block }}__row">
+  <div class="{{ block }}__cell">
+  <img class="{{ block }}__icon" src="assets/img/branchIcon.svg">users/a-aidyn00/my-feature-2</div>
+  <div class="{{ block }}__cell">
+    <a class="link" href="#">7748ds893432438dsd823329d923482d</a>
+  </div>
+</div>
+{% endfor %}
+{% endif %} 
+</div>

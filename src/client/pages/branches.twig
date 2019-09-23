@@ -1,0 +1,28 @@
+{% set tabs = [{active: false, text: "FILES"}, {active: true, text: "BRANCHES"}] %}
+
+{% include 'parts/metaHead.twig' %}
+<body class='page'>
+    <div class="page__header">
+        {% include '../blocks/header/header.twig' with { content: headerLogo } %}
+    </div>
+
+    <div class="page__content">
+        <div class="page__path">
+            {% include '../blocks/breadcrambs/breadcrambs.twig'%}
+        </div>
+
+        {% include '../blocks/repository-head/repository-head.twig'%}
+
+        <div class="page__tabs">
+            {% include '../blocks/tabs/tabs.twig' %}
+        </div>
+
+        {% include '../blocks/table/templates/branch-list.twig' %}
+
+    </div>
+
+
+    <div class="page__footer">
+        {% include '../blocks/footer/footer.twig' %}
+    </div>
+</body></html>

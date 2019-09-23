@@ -1,0 +1,14 @@
+{% set block = "header" %}
+
+
+<div class="{{ block }}{% if mods %} {{block}}__{{mods}}{% endif %}">
+{% if content %}
+       {{content}}
+{% else %}
+<div class="header__logo">
+    <img class="header__img" src="assets/img/logoYandex.svg">
+    <img class="header__img" src="assets/img/logoArcanum.svg">
+</div>
+    {% include "../dropdown/templates/repo-dropdown.twig" with {mix: "header__button"} %} 
+{% endif %}
+</div>

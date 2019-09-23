@@ -1,0 +1,20 @@
+{% set tabs = [{active: true, text: "DETAILS"}, {active: false, text: "HISTORY"}] %}
+
+
+{% include 'parts/metaHead.twig' %}
+<body class='page'>
+    <div class="page__header">
+        {% include '../blocks/header/header.twig' with { content: headerLogo } %}
+    </div>
+
+    <div class="page__content">
+        {% include '../blocks/repository-head/repository-head.twig'%}
+
+        {% include '../blocks/preview/templates/diff-preview.twig' %}
+    </div>
+
+
+    <div class="page__footer">
+        {% include '../blocks/footer/footer.twig' %}
+    </div>
+</body></html>

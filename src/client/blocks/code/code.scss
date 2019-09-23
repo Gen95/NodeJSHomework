@@ -1,0 +1,37 @@
+.code {
+  font-size: 12px;
+  line-height: 20px;
+  white-space: pre-wrap;
+
+  &__rowNumber {
+    box-sizing: border-box;
+    color: #999;
+    padding: 0 10px;
+    text-align: right;
+    vertical-align: top;
+    width: 40px;
+  }
+
+  &__value {
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+
+  &__table {
+    border-collapse: collapse;
+    overflow-wrap: break-word;
+    table-layout: fixed;
+    width: 100%;  
+  }
+
+  &__row {
+    &_add {
+      background: #e6ffed;
+    }
+
+    &_remove {
+      background: #ffeef0;
+    }
+  }
+
+}

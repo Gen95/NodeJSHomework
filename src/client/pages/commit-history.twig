@@ -1,0 +1,77 @@
+{% set tabs = [{active: false, text: "DETAILS"}, {active: true, text: "HISTORY"}] %}
+{% set commits = [{
+    date: 'Today',
+    list: [{
+        title: 'Support new distbuild protocol',
+        message: 'Не очень качественно написаны некоторые функции. Предлагаю исправить это недоразумение.',
+        hash: 's324e8',
+        author: 'woodcutter',
+        date: '4 s ago',
+    },
+        {
+            title: 'Force executing on MULTISLOT hosts by declaring Caches',
+            message: 'Не очень правильно с точки зрения ООП написаны некоторые функции. Предлагаю исправить это.',
+            hash: 's324e8',
+            author: 'rudskoy',
+            date: '1 min ago',
+        },
+        {
+            title: 'Fixed run_diff_test in the realms',
+            message: 'Не очень правильно с точки зрения ООП написаны некоторые функции. Предлагаю исправить это.',
+            hash: 's324e8',
+            author: 'annaveronika',
+            date: '16:25',
+        }]
+},
+    {
+        date: 'Yesterday',
+        list: [{
+        title: 'Support HTTP resources',
+        message: 'Не очень качественно написаны некоторые функции. Предлагаю исправить это недоразумение.',
+        hash: 's324e8',
+        author: 'woodcutter',
+        date: '4 s ago',
+    },
+        {
+            title: 'Fixed run_diff_test',
+            message: 'Не очень правильно с точки зрения ООП написаны некоторые функции. Предлагаю исправить это.',
+            hash: 's324e8',
+            author: 'by rudskoy',
+            date: '1 min ago',
+        },
+        {
+            title: 'Update ya-bin and test_tool',
+            message: 'Не очень правильно с точки зрения ООП написаны некоторые функции. Предлагаю исправить это.',
+            hash: 's324e8',
+            author: 'annaveronika',
+            date: '16:25',
+        }]
+    }] %}
+
+
+{% include 'parts/metaHead.twig' %}
+<body class='page'>
+    <div class="page__header">
+        {% include '../blocks/header/header.twig' with { content: headerLogo } %}
+    </div>
+
+    <div class="page__content">
+        <div class="page__path">
+            {% include '../blocks/breadcrambs/breadcrambs.twig'%}
+        </div>
+
+        {% include '../blocks/repository-head/repository-head.twig'%}
+
+        <div class="page__tabs">
+            {% include '../blocks/tabs/tabs.twig' %}
+        </div>
+
+        {% include '../blocks/commit-history/commit-history.twig' with {commits} %}
+
+    </div>
+
+
+    <div class="page__footer">
+        {% include '../blocks/footer/footer.twig' %}
+    </div>
+</body></html>

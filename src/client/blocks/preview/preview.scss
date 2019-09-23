@@ -1,0 +1,103 @@
+.preview {
+
+  border: solid 1px $border-color;
+  border-radius: 2px;
+
+  &__icon {
+    background: url('assets/img/readmeIcon.svg');
+    height: 12px;
+
+    margin-right: 12px;
+    width: 9px;
+  }
+
+  &__header {
+    align-items: center;
+    background: $light-gray;
+    border-bottom: solid 1px $border-color;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    min-height: 42px;
+    padding: 0 16px;
+  }
+
+  &__fileInfo {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__size {
+    color: #999;
+    margin-left: 4px;
+  }
+
+  &__download {
+    background: url('assets/img/downloadIcon.svg') transparent no-repeat center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    min-height: 28px;
+    min-width: 38px;
+    padding: 8px 12px;
+  }
+
+  &__inner {
+    padding: 24px 15px;
+    word-break: break-word;
+
+    @media (min-width: $screen-md) {
+      padding: 24px 32px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 0 10px;
+  }
+
+  &__fileInfo {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__M {
+    color: #6b69c7;
+    margin-right: 12px;
+  }
+
+  &__changes {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__added {
+    color: #19bc4d;
+    margin-right: 12px;
+  }
+
+  &__removed {
+    color: $red;
+    margin-right: 12px;
+  }
+
+  &__arrow-button {
+    background: url('assets/img/arrowIcon.svg') transparent no-repeat center;
+    border: 0;
+    box-sizing: border-box;
+    min-height: 20px;
+    min-width: 20px;
+    opacity: 0.3;
+    padding: 0 auto;
+  }
+
+  &__col {
+    align-items: center;
+    display: flex;
+  }
+}

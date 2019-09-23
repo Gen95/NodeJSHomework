@@ -1,0 +1,22 @@
+{% set block = "repository-head" %}
+
+
+<div class="{{ block }}{% if mods %} {{block}}__{{mods}}{% endif %}">
+    {% if content %}
+        {{content}}
+    {% else %}
+        <div class="{{ block }}__title">
+            <h1 class="{{ block }}__name">arcadia</h1>
+            <div class="{{ block }}__switcher">
+                {% include "../dropdown/templates/branch-dropdown.twig" %}
+            </div>
+        </div>
+        <div class="{{ block }}__info">Last commit
+            <a href="#" class="link">c4d248</a>
+            on
+            <a href="#" class="link">20 Oct 2017, 12:24</a>
+            by
+            <span class="committer">robot-srch-releaser</span>
+        </div>
+    {% endif %}
+</div>

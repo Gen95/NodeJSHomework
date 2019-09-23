@@ -1,0 +1,118 @@
+.commit-history {
+  padding-top: 8px;
+
+  &__item {
+    & + & {
+      margin-top: 18px;
+    }
+  }
+
+  &__date {
+    color: #7f8285;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__messsage {
+    margin-top: 2px;
+  }
+
+  &__commitList {
+    margin-top: 16px;
+  }
+
+  &__message {
+    white-space: pre-wrap;
+  }
+
+  &__commit {
+    display: flex;
+    font-size: 14px;
+    line-height: 18px;
+    padding-bottom: 50px;
+    position: relative;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:not(:last-child)::after {
+      background: #b8bec3;
+      border-radius: 1px;
+      bottom: 2px;
+      content: '';
+      left: 19px;
+      position: absolute;
+      top: 42px;
+      width: 2px;
+    }
+  }
+
+  &__icon {
+    background: url('assets/img/commitIcon.svg') #ebf6fd no-repeat center;
+    border-radius: 50%;
+    height: 40px;
+    min-width: 40px;
+    width: 40px;
+  }
+
+  &__meta {
+    margin-left: 12px;
+    width: 100%;
+  }
+
+  &__info {
+    @media (min-width: $screen-md) {
+      max-width: 50%;
+    }
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__cell {
+    box-sizing: border-box;
+    padding: 0 8px;
+
+    @media (min-width: $screen-md) {
+      flex: 1 1;
+      text-align: right;
+
+      &:last-child {
+        flex: 0 1 15%;
+        max-width: 200px;
+        padding-right: 0;
+      }
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &_name {
+      flex: 1 1;
+      @media (min-width: $screen-md) {
+        flex: 1 0 50%;
+        max-width: 50%;
+        text-align: left;
+      }
+    }
+
+    &_hash {
+      display: none;
+      @media (min-width: $screen-md) {
+        display: block;
+      }
+    }
+  }
+
+  &__justin {
+    color: $gray;
+  }
+}
