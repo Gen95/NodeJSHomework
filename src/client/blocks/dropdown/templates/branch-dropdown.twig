@@ -1,0 +1,25 @@
+{% set title %}
+<div class="{{ block }}__control">trunk</div>
+{% endset %}
+
+{% set list = [
+{
+selected: true,
+title: 'Trunk',
+description: 'Last commit 4 s ago',
+},
+{
+title: 'users/rudskoy/DEVTOOLS-94877',
+description: 'Last commit 1 min ago',
+},
+{
+title: 'users/rudskoy/DEVTOOLS-43865',
+description: 'Last commit at 16:25',
+},
+{
+title: 'users/rudskoy/DEVTOOLS-94877',
+description: 'Last commit yesterday, 14:50',
+}
+] %}
+
+{% include "../dropdown.twig" with {title, mods: 'theme_gray', list}  %}

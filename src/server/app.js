@@ -1,6 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const { argv } = require('yargs');
 const { exec } = require('child_process');
+
 
 const app = express();
 const port = argv.port || 8000;
@@ -13,7 +15,7 @@ if (!pathRepo) {
   process.exit(-1);
 }
 
-app.use(express.json());
+app.use(express.json()).use(cors());
 
 app.get('/api/repos', (req, res) => {
   exec(`cd ${pathRepo} && ls -d */`, (err, out) => {
@@ -23,7 +25,12 @@ app.get('/api/repos', (req, res) => {
       });
     } else {
       res.status(200).send({
-        result: out.split('\n').filter((item) => item.length),
+        result: out.split('\n').reduce((arr, item) => {
+          if (item.length) {
+            arr.push(item.substring(0, item.length - 1));
+          }
+          return arr;
+        }, []),
       });
     }
   });

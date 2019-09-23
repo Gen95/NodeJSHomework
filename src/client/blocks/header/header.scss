@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+
+
+  &__img + &__img {
+    margin-left: 4px;
+    margin-right: 40px;
+  }
+
+  &__button {
+    border-bottom: 3px solid $red;
+    display: inline-block;
+    margin-bottom: -1px; //чтобы бордер хедера и бордер кнопки выровнялись по нижней границе
+    padding-bottom: 15px;
+  }
+}

@@ -1,0 +1,11 @@
+{% set block = "footer" %}
+
+
+<div class="{{ block }}{% if mods %} {{block}}__{{mods}}{% endif %}">
+{% if content %}
+       {{content}}
+{% else %}
+<div class="{{ block }}__address">Trade secrets of Yandex LLC. 16, Lev Tolstoy Str., Moscow, Russia, 119021</div>
+<div class="{{ block }}__copyright"><span class="{{ block }}__UI">UI: 0.1.15</span>© 2007—2019 <a href class="link"="https://yandex.ru/" target="_blank">Yandex</a></div>
+{% endif %}
+</div>

@@ -1,0 +1,21 @@
+{% set block = "dropdown" %}
+
+
+<div class="{{ block }} {% if mods %} {{ block }}_{{mods}}{% endif %} {% if mix %} {{mix}}{% endif %} js-{{block}}">
+    <button class="{{ block }}__control button">{{ title }}</button>
+    <div class="{{ block }}__popup">
+      <div class="{{block}}__header"></div>
+        <div class="{{block}}__list">
+            {% for item in list %}
+                <div class="{{ block }}__item {%if item.selected %} {{ block }}__item_selected{% endif %}">
+                    {% if item.title %}
+                        <div class="{{block}}__title">{{item.title}}</div>
+                    {% endif %}
+                    {% if item.description %}
+                        <div class="{{block}}__description">{{item.description}}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

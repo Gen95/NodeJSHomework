@@ -1,0 +1,31 @@
+{% set block = "commit-history" %}
+
+
+<div class="{{ block }}">
+    {% for item in commits %}
+        <div class="{{ block }}__item">
+            <div class="{{ block }}__date">{{ item.date }}</div>
+            <div class="{{ block }}__commitList">
+                {% for commit in item.list %}
+                    <div class="{{ block }}__commit">
+                        <div class="{{ block }}__icon"></div>
+                        <div class="{{ block }}__meta">
+                            <div class="{{ block }}__row">
+                                <div class="{{ block }}__cell {{ block }}__cell_name {{ block }}__name">{{ commit.title }}</div>
+                                <div class="{{ block }}__cell {{ block }}__cell_hash"><a class="link" href="#">{{ commit.hash }}</a></div>
+                                <div class="{{ block }}__cell"><span class="{{ block }}__justin">&lt\&gt</span></div>
+                            </div>
+                            <div class="{{ block }}__info">
+                                <div class="{{ block }}__message">{{ commit.message }}</div>
+                                <div class="{{ block }}__committer">
+                                    <a href="#" class="link">{{ commit.hash }}</a> by <span
+                                        class="committer">{{ commit.author }}</span>, {{ commit.date }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

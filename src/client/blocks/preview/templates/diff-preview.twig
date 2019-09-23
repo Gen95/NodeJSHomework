@@ -1,0 +1,52 @@
+{% set content = "<!DOCTYPE html>
+ <html lang='ru'>
+-    <head>
+-        <meta charset='UTF-8'>
+-        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+-        <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+-        <title>Yandex Arcanum</title>
+-        <link rel='stylesheet' href='style.css'>
+-        <script src='script.js' defer></script>
+-    </head>
+-    <body>
+-
+-
++<head>
++    <meta charset='UTF-8'>
++    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
++    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
++    <title>Yandex Arcanum</title>
++    <link rel='stylesheet' href='style.css'>
++    <link rel='stylesheet'
++          href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github-gist.min.css'>
++
++    <script src='script.js' defer></script>
++</head>
++<body>
++
++
+
+ <div class='header'>
+ <div class='header__logo'>" %}
+{% set mod = 'diff' %}
+
+<div class="preview">
+    <div class="preview__header">
+        <div class="preview__fileInfo preview__col">
+            <div class="preview__M">M</div>
+            <div class="preview__icon"></div>
+            <div class="preview__name">/trunk/arcadia/devtools/intellij/src/main/java/ru/yandex/devtools/intellij/arc/client/ArcCli.java</div>
+
+        </div>
+        <div class="preview__changes preview__col">
+            <span class="preview__added">+100</span>
+            <span class="preview__removed">-81</span>
+            <button class="preview__arrow-button"></button>
+        </div>
+    </div>
+    {% include '../../row-expand/row-expand.twig' %}
+    <div class="preview__content">
+        {% include '../../code/code.twig' with {content, mode} %}
+    </div>
+    {% include '../../row-expand/row-expand.twig' %}
+</div>

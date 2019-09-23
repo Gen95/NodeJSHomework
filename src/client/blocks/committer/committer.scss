@@ -1,0 +1,7 @@
+.committer {
+  display: inline-block;
+
+  &::first-letter {
+    color: $red;
+  }
+}

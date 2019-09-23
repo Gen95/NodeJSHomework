@@ -15,5 +15,10 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
+    "no-restricted-syntax": "off",
+    "no-param-reassign": "off",
+    "no-const-assign": "off",
+    "import/export": "off",
+    "import/prefer-default-export": "off"
   },
 };

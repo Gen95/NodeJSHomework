@@ -1,0 +1,32 @@
+.breadcrambs {
+  display: flex;
+  flex-wrap: wrap;
+
+  & &__item {
+    color: $gray;
+
+    &_active {
+      color: #000;
+    }
+  }
+
+  &__item {
+    margin-right: 12px;
+    position: relative;
+
+    & + & {
+      padding-left: 8px;
+
+      &::after {
+        color: $gray;
+        content: '/';
+        position: absolute;
+        right: 100%;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

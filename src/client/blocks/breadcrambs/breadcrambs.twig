@@ -1,0 +1,10 @@
+{% set block = "breadcrambs" %}
+
+
+<div class="{{ block }}{% if mods %} {{block}}_{{mods}}{% endif %}">
+    <a href="#" class="{{ block }}__item link"><span>root</span></a>
+    <a href="#" class="{{ block }}__item link">trunk</a>
+    <a href="#" class="{{ block }}__item link">arcadia</a>
+    <a href="#" class="{{ block }}__item link">addapter</a>
+    <div class="{{ block }}__item {{ block }}__item_active">ya.make</div>
+</div>

@@ -1,0 +1,24 @@
+.row-expand {
+  background-color: #f1f8ff;
+  display: flex;
+  font-family: PT Mono;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 7px 11px;
+
+  &__info {
+    color: #b8bec3;
+    width: 25%;
+  }
+
+  &__below {
+    color: #b8bec3;
+    padding-right: 32px;
+    text-align: right;
+    width: 25%;
+  }
+
+  &__above {
+    width: 50%;
+  }
+}

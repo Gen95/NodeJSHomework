@@ -1,0 +1,136 @@
+.dropdown {
+  position: relative;
+
+  &__list {
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(53, 73, 93, 0.2);
+    max-height: 200px;
+    overflow: auto;
+  }
+
+  &__header {
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    height: 24px;
+    position: relative;
+
+    &::after {
+      background: #e5e5e5;
+      border-radius: 2px;
+      content: '';
+      height: 4px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 42px;
+    }
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    overflow: hidden;
+    padding: 9px 22px;
+    text-overflow: ellipsis;
+
+    @media (min-width: $screen-md) {
+      width: 266px;
+    }
+
+    &:hover {
+      background: #f4f5f6;
+    }
+
+    &_selected {
+      background: #4f4f4f;
+      color: #fff;
+
+      .dropdown__title {
+        color: #f2f2f2;
+      }
+
+      .dropdown__description {
+        color: #e0e0e0;
+      }
+
+      &:hover {
+        background: #4f4f4f;
+        color: #fff;;
+      }
+    }
+  }
+
+  &__popup {
+    display: none;
+    flex-direction: column;
+    left: 0;
+    position: absolute;
+    top: calc(100% + 3px);
+    z-index: 10;
+
+    @media (max-width: $screen-md - 1) {
+      background: rgba(0, 0, 0, 0.5);
+      bottom: 0;
+      justify-content: flex-end;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &_open {
+    > .dropdown__popup {
+      display: flex;
+    }
+
+    .dropdown__control::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__control {
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 18px;
+    position: relative;
+
+    &::after {
+      background: url('assets/img/dropdown.svg') no-repeat center;
+      content: '';
+      height: 12px;
+      left: 100%;
+      position: absolute;
+      top: 30%;
+      width: 12px;
+    }
+  }
+
+  &__title {
+    color: #434445;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__description {
+    color: #7f8285;
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  &_theme_gray {
+    .dropdown__control {
+      color: $gray;
+      font-size: 24px;
+      line-height: 28px;
+
+      &::after {
+        background: url('assets/img/dropdown.svg') no-repeat center / 110%;
+        opacity: 0.7;
+      }
+    }
+  }
+}

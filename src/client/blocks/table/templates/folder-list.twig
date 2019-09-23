@@ -1,0 +1,27 @@
+{% set block = "table" %}
+
+
+<div class="{{ block }}{% if mods %} {{block}}__{{mods}}{% endif %}">
+{% if content %}
+       {{content}}
+{% else %}
+<div class="{{ block }}__row {{ block }}__head">
+  <div class="{{ block }}__cell {{ block }}__cell_name">Name</div>
+  <div class="{{ block }}__cell {{ block }}__cell_last-commit">Last commit</div>
+  <div class="{{ block }}__cell {{ block }}__cell_commit-message">Commit message</div>
+  <div class="{{ block }}__cell {{ block }}__cell_committer">Committer</div>
+  <div class="{{ block }}__cell {{ block }}__cell_updated">Updated</div>
+</div>
+{% for row in folderList %}
+<div class="{{ block }}__row">
+  <div class="{{ block }}__cell {{ block }}__cell_name {{ block }}__cell_md-size_1 {{ block }}__cell_md-order_1"><img class="{{ block }}__icon" src={{row.icon}}>{{row.name}}</div>
+  <div class="{{ block }}__cell {{ block }}__cell_last-commit {{ block }}__cell_md-size_auto {{ block }}__cell_md-order_3">
+    <a class="link" href="#">{{row.lastCommit}}</a>
+  </div>
+  <div class="{{ block }}__cell {{ block }}__cell_commit-message {{ block }}__cell_md-size_1 {{ block }}__cell_md-order_2">{{row.commitMessage}}</div>
+  <div class="{{ block }}__cell {{ block }}__cell_committer committer {{ block }}__cell_md-size_auto {{ block }}__cell_md-order_4">{{row.committer}}</div>
+  <div class="{{ block }}__cell {{ block }}__cell_updated {{ block }}__cell_md-size_auto {{ block }}__cell_md-order_5">{{row.updated}}</div>
+</div>
+{% endfor %}
+{% endif %} 
+</div>
