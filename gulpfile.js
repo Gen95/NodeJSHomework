@@ -70,7 +70,7 @@ gulp.task('build:scripts', () => gulp.src('src/client/**/*.js')
   .pipe(uglify())
   .pipe(gulp.dest('./build/client')));
 
-gulp.task('build:server:scripts', () => gulp.src('src/server/*.js')
+gulp.task('build:server:scripts', () => gulp.src('src/**/*.js')
   .pipe(plumber(handleError))
   .pipe(uglify())
   .pipe(gulp.dest('./build/server')));
