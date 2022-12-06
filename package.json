@@ -20,7 +20,7 @@
   "homepage": "https://github.com/Gen95/NodeJSHomework#readme",
   "dependencies": {
     "eslint-config-airbnb": "^18.0.1",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "nodemon": "^1.19.2",
     "yargs": "^14.0.0"
   },
